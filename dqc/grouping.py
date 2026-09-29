@@ -6,8 +6,10 @@ While the group is open, one qubit (the "held" qubit, or root) has its 0/1 value
 mirrored on a communication qubit in a far QPU. Gates can join the group as long
 as they do not change the held qubit's 0/1 value.
 """
+from collections import deque
 
 from dqc.metrics import is_nonlocal
+from dqc.commutation import can_commute
 
 
 
@@ -132,14 +134,41 @@ class Grouper:
         for group in list(self.open_groups):
             self.close(group)
 
-def group_gates(circuit, assignment, dmax=None):
-    """Algorithm 1: return the output list (local gates and groups)."""
+def group_gates(circuit, assignment, dmax=None, lookahead=0):
+    """Algorithm 1: return the output list (local gates and groups).
+
+    lookahead = how many later gates may be tried when the first gate is blocked
+    (0 = no reordering).
+    """
     grouper = Grouper(assignment, dmax)
-    for gate in circuit.gates:
-        while not grouper.try_place(gate):
-            grouper.close_first_group_of(gate)
+    pending = deque(circuit.gates)              # gates not placed yet, in order
+    while pending:
+        if grouper.try_place(pending[0]):
+            pending.popleft()                   # placed: remove it
+        elif not place_a_later_gate(grouper, pending, lookahead):
+            grouper.close_first_group_of(pending[0])
     grouper.close_all()
     return grouper.output
+
+
+def place_a_later_gate(grouper, pending, lookahead):
+    """Reordering (Algorithm 1, lines 26-28).
+
+    pending[0] is blocked. Try the next gates: a gate may be moved in front of the
+    gates before it only if it commutes with ALL of them. Place the first one that
+    can be placed. Return True if a gate was placed.
+    """
+    last = min(lookahead, len(pending) - 1)
+    for k in range(1, last + 1):
+        candidate = pending[k]
+        for j in range(k):
+            if not can_commute(candidate, pending[j]):
+                return False                    # cannot move past pending[j]: stop
+        if grouper.try_place(candidate):
+            del pending[k]
+            return True
+    return False
+
 
 def count_epr(output):
     """One EPR pair per group."""
@@ -172,7 +201,9 @@ if __name__ == "__main__":
     for name in TABLE1:
         circuit = load_qasm(f"benchmarks/{name}.qasm")
         assignment = assign_qubits(circuit, 2)
-        ours = [count_epr(group_gates(circuit, assignment, dmax)) for dmax in (1, 3, None)]
+        settings = [(1, 0), (3, 10), (None, 10)]      # (dmax, lookahead) per column
+        ours = [count_epr(group_gates(circuit, assignment, dmax, lookahead))
+                for dmax, lookahead in settings]
         paper = TABLE1[name]
         cells = [f"{p:>6d} / {o:<6d}" for p, o in zip(paper, ours)]
         print(f"{name:18s} " + " ".join(cells))

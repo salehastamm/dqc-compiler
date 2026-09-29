@@ -65,6 +65,14 @@ def test_grouping_keeps_the_circuit_equivalent():
         c = random_circuit(rng, n, rng.randint(1, 40))
         assignment = {q: rng.randrange(3) for q in range(n)}
         original = Operator(to_qiskit(c.gates, n))
-        for dmax in (None, 1, 3):
-            grouped = flatten(group_gates(c, assignment, dmax))
+        for dmax, lookahead in ((None, 0), (1, 0), (3, 0), (None, 10), (3, 10)):
+            grouped = flatten(group_gates(c, assignment, dmax, lookahead))
             assert Operator(to_qiskit(grouped, n)).equiv(original)
+            
+
+def test_reordering_saves_an_epr_pair():
+    # cz[2, 1] blocks the group of cx[0, 1]; cx[0, 3] commutes with it and can join.
+    c = Circuit(4, [Gate("cx", [0, 1]), Gate("cz", [2, 1]), Gate("cx", [0, 3])])
+    a = {0: 0, 2: 0, 1: 1, 3: 1}
+    assert count_epr(group_gates(c, a, lookahead=0)) == 3
+    assert count_epr(group_gates(c, a, lookahead=1)) == 2
