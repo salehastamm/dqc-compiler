@@ -1,0 +1,157 @@
+circuit,QPUs,setting,communication qubits,EPR pairs,depth
+adder_n118,2,no opt,4,14,643
+adder_n118,2,limit=3,4,13,643
+adder_n118,2,unlimited,4,13,643
+adder_n118,4,no opt,4,30,644
+adder_n118,4,limit=3,4,29,644
+adder_n118,4,unlimited,4,27,644
+adder_n118,8,no opt,4,66,658
+adder_n118,8,limit=3,4,63,658
+adder_n118,8,unlimited,4,54,656
+adder_n118,16,no opt,4,153,700
+adder_n118,16,limit=3,4,150,703
+adder_n118,16,unlimited,4,100,682
+qft_n320,2,no opt,4,51200,178723
+qft_n320,2,no opt,8,51200,176497
+qft_n320,2,no opt,16,51200,172045
+qft_n320,2,limit=3,4,25600,151851
+qft_n320,2,limit=3,8,25600,148035
+qft_n320,2,limit=3,16,25600,140403
+qft_n320,2,unlimited,4,160,23356
+qft_n320,2,unlimited,8,160,12198
+qft_n320,2,unlimited,16,160,6667
+qft_n320,3,no opt,4,68266,237235
+qft_n320,3,limit=3,4,34133,201194
+qft_n320,3,unlimited,4,320,21039
+qft_n320,4,no opt,4,76800,265927
+qft_n320,4,no opt,8,76800,262581
+qft_n320,4,no opt,16,76800,255889
+qft_n320,4,limit=3,4,38400,225379
+qft_n320,4,limit=3,8,38400,219643
+qft_n320,4,limit=3,16,38400,208171
+qft_n320,4,unlimited,4,480,25081
+qft_n320,4,unlimited,8,480,13113
+qft_n320,4,unlimited,16,480,7375
+qft_n320,5,no opt,4,81920,282697
+qft_n320,5,limit=3,4,40960,239511
+qft_n320,5,unlimited,4,640,28770
+qft_n320,8,no opt,4,89600,306175
+qft_n320,8,no opt,8,89600,302269
+qft_n320,8,no opt,16,89600,294457
+qft_n320,8,limit=3,4,44800,259275
+qft_n320,8,limit=3,8,44800,252579
+qft_n320,8,limit=3,16,44800,239187
+qft_n320,8,unlimited,4,1120,47460
+qft_n320,8,unlimited,8,1120,28321
+qft_n320,8,unlimited,16,1120,15159
+qft_n320,10,no opt,4,92160,312883
+qft_n320,10,limit=3,4,46080,264907
+qft_n320,10,unlimited,4,1440,58056
+qft_n320,16,no opt,4,96000,319591
+qft_n320,16,no opt,8,96000,315405
+qft_n320,16,no opt,16,96000,307033
+qft_n320,16,limit=3,4,48000,270487
+qft_n320,16,limit=3,8,48000,263311
+qft_n320,16,limit=3,16,48000,249376
+qft_n320,16,unlimited,4,2400,83371
+qft_n320,16,unlimited,8,2400,52770
+qft_n320,16,unlimited,16,2400,31563
+multiplier_n350,2,no opt,4,11470,163567
+multiplier_n350,2,no opt,8,11470,160632
+multiplier_n350,2,no opt,16,11470,159911
+multiplier_n350,2,limit=3,4,10694,159372
+multiplier_n350,2,limit=3,8,10694,159009
+multiplier_n350,2,limit=3,16,10694,158029
+multiplier_n350,2,unlimited,4,6747,157413
+multiplier_n350,2,unlimited,8,6747,156858
+multiplier_n350,2,unlimited,16,6747,155786
+multiplier_n350,3,no opt,4,16984,173402
+multiplier_n350,3,limit=3,4,15978,161102
+multiplier_n350,3,unlimited,4,10741,157442
+multiplier_n350,4,no opt,4,21174,183762
+multiplier_n350,4,no opt,8,21174,167964
+multiplier_n350,4,no opt,16,21174,165102
+multiplier_n350,4,limit=3,4,20118,165114
+multiplier_n350,4,limit=3,8,20118,163068
+multiplier_n350,4,limit=3,16,20118,162159
+multiplier_n350,4,unlimited,4,14435,161138
+multiplier_n350,4,unlimited,8,14435,160619
+multiplier_n350,4,unlimited,16,14435,159707
+multiplier_n350,6,no opt,4,25770,188628
+multiplier_n350,6,limit=3,4,24852,171658
+multiplier_n350,6,unlimited,4,19720,162404
+multiplier_n350,8,no opt,4,29486,191517
+multiplier_n350,8,no opt,8,29486,172592
+multiplier_n350,8,no opt,16,29486,170962
+multiplier_n350,8,limit=3,4,28506,180681
+multiplier_n350,8,limit=3,8,28506,167793
+multiplier_n350,8,limit=3,16,28506,166431
+multiplier_n350,8,unlimited,4,22482,174639
+multiplier_n350,8,unlimited,8,22482,163649
+multiplier_n350,8,unlimited,16,22482,161443
+multiplier_n350,11,no opt,4,32264,194730
+multiplier_n350,11,limit=3,4,31426,172518
+multiplier_n350,11,unlimited,4,25624,166002
+multiplier_n350,16,no opt,4,37284,202913
+multiplier_n350,16,no opt,8,37284,185439
+multiplier_n350,16,no opt,16,37284,174571
+multiplier_n350,16,limit=3,4,35798,187679
+multiplier_n350,16,limit=3,8,35798,170032
+multiplier_n350,16,limit=3,16,35798,168499
+multiplier_n350,16,unlimited,4,28402,177747
+multiplier_n350,16,unlimited,8,28402,165939
+multiplier_n350,16,unlimited,16,28402,163620
+qugan_n395,2,no opt,4,404,3154
+qugan_n395,2,no opt,8,404,2266
+qugan_n395,2,no opt,16,404,2238
+qugan_n395,2,limit=3,4,203,1790
+qugan_n395,2,limit=3,8,203,1788
+qugan_n395,2,limit=3,16,203,1788
+qugan_n395,2,unlimited,4,5,1789
+qugan_n395,2,unlimited,8,5,1789
+qugan_n395,2,unlimited,16,5,1789
+qugan_n395,4,no opt,4,628,3869
+qugan_n395,4,no opt,8,628,3407
+qugan_n395,4,no opt,16,628,2494
+qugan_n395,4,limit=3,4,321,2686
+qugan_n395,4,limit=3,8,321,1798
+qugan_n395,4,limit=3,16,321,1798
+qugan_n395,4,unlimited,4,26,1809
+qugan_n395,4,unlimited,8,26,1795
+qugan_n395,4,unlimited,16,26,1795
+qugan_n395,7,no opt,4,740,4192
+qugan_n395,7,limit=3,4,383,3079
+qugan_n395,7,unlimited,4,47,1815
+qugan_n395,8,no opt,4,772,4029
+qugan_n395,8,no opt,8,772,3770
+qugan_n395,8,no opt,16,772,2635
+qugan_n395,8,limit=3,4,403,2933
+qugan_n395,8,limit=3,8,403,1815
+qugan_n395,8,limit=3,16,403,1813
+qugan_n395,8,unlimited,4,60,2561
+qugan_n395,8,unlimited,8,60,1805
+qugan_n395,8,unlimited,16,60,1805
+qugan_n395,13,no opt,4,968,4432
+qugan_n395,13,limit=3,4,598,3431
+qugan_n395,13,unlimited,4,299,2214
+qugan_n395,16,no opt,4,992,4048
+qugan_n395,16,no opt,8,992,3862
+qugan_n395,16,no opt,16,992,2707
+qugan_n395,16,limit=3,4,599,3048
+qugan_n395,16,limit=3,8,599,1898
+qugan_n395,16,limit=3,16,599,1897
+qugan_n395,16,unlimited,4,285,3026
+qugan_n395,16,unlimited,8,285,1876
+qugan_n395,16,unlimited,16,285,1842
+swap_test_n83,2,no opt,4,84,459
+swap_test_n83,2,limit=3,4,63,356
+swap_test_n83,2,unlimited,4,1,187
+swap_test_n83,4,no opt,4,128,519
+swap_test_n83,4,limit=3,4,97,407
+swap_test_n83,4,unlimited,4,37,327
+swap_test_n83,8,no opt,4,148,549
+swap_test_n83,8,limit=3,4,112,432
+swap_test_n83,8,unlimited,4,42,372
+swap_test_n83,16,no opt,4,180,567
+swap_test_n83,16,limit=3,4,141,452
+swap_test_n83,16,unlimited,4,75,409
