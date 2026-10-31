@@ -59,4 +59,6 @@ Qiskit is used only to read input files and to verify results; all compiler pass
 
 ## Acknowledgements
 
-Benchmark circuits from [QASMBench](https://github.com/pnnl/QASMBench) (Li et al., PNNL).
+Benchmark circuits from [QASMBench](https://github.com/pnnl/QASMBench) (Li et al., PNNL),
+© 2020 Battelle Memorial Institute, redistributed under its license (`benchmarks/QASMBench-LICENSE`).
+
